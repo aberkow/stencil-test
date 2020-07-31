@@ -6,71 +6,53 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface UcommReqApptForm {
     }
-    interface MyInput {
+    interface UcommTextInput {
+        "inputId": string;
+        "placeholder": string;
+        "stateTarget": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLUcommReqApptFormElement extends Components.UcommReqApptForm, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLUcommReqApptFormElement: {
+        prototype: HTMLUcommReqApptFormElement;
+        new (): HTMLUcommReqApptFormElement;
     };
-    interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {
+    interface HTMLUcommTextInputElement extends Components.UcommTextInput, HTMLStencilElement {
     }
-    var HTMLMyInputElement: {
-        prototype: HTMLMyInputElement;
-        new (): HTMLMyInputElement;
+    var HTMLUcommTextInputElement: {
+        prototype: HTMLUcommTextInputElement;
+        new (): HTMLUcommTextInputElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "my-input": HTMLMyInputElement;
+        "ucomm-req-appt-form": HTMLUcommReqApptFormElement;
+        "ucomm-text-input": HTMLUcommTextInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface UcommReqApptForm {
         "onTestEvent"?: (event: CustomEvent<Object>) => void;
     }
-    interface MyInput {
-        "onMy-input-event"?: (event: CustomEvent<String>) => void;
+    interface UcommTextInput {
+        "inputId": string;
+        "onUcTextInput"?: (event: CustomEvent<Object>) => void;
+        "placeholder"?: string;
+        "stateTarget"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
-        "my-input": MyInput;
+        "ucomm-req-appt-form": UcommReqApptForm;
+        "ucomm-text-input": UcommTextInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
+            "ucomm-req-appt-form": LocalJSX.UcommReqApptForm & JSXBase.HTMLAttributes<HTMLUcommReqApptFormElement>;
+            "ucomm-text-input": LocalJSX.UcommTextInput & JSXBase.HTMLAttributes<HTMLUcommTextInputElement>;
         }
     }
 }

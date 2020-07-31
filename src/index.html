@@ -11,10 +11,12 @@
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <ucomm-req-appt-form>
+    
+  </ucomm-req-appt-form>
 
   <script>
-    document.querySelector('my-component').addEventListener('testEvent', ({ detail }) => {
+    document.querySelector('ucomm-req-appt-form').addEventListener('testEvent', ({ detail }) => {
       console.log(detail, 'testEvent')
     })
   </script>
